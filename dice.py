@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-
 import random
+import sys
 
 
 def getInput():
@@ -10,11 +10,14 @@ def getInput():
 
     """
     while True:
-        rawDice = input("enter number of dice and number of sides: ")
+        try:
+            rawDice = input("enter number of dice and number of sides: ")
+        except KeyboardInterrupt:
+            sys.exit()
         dice = rawDice.strip(" ")
-        delim = int(dice.find(" "))
+        delim = int(dice.find("d"))
         if delim == -1:
-            print("invalid format: input = <number_of_dice> <number_of_sides>")
+            print("invalid format: input = <dice#>d<#sides>")
         else:
             break
     numberDice = int(dice[:delim])
