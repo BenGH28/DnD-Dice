@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-import random
 import sys
+import random
 
 
-def getInput():
+def get_input():
     """get user input for the number of dice and the number sides of dice.
 
     :returns tuple of # of dice and sides
@@ -26,10 +26,9 @@ def getInput():
 
 
 def main():
-    """Main function that calculates dice
-    """
+    """ Main function that calculates dice """
     sum = 0
-    numberDice, sidesDice = getInput()
+    numberDice, sidesDice = get_input()
     for i in range(1, numberDice + 1):
         dice = random.randint(1, sidesDice)
         sum += dice
